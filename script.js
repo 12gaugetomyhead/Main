@@ -10,15 +10,10 @@ window.onload = function() {
         fadeContainer.style.transition = 'opacity 0.5s ease-in-out';
         fadeContainer.style.opacity = '0';
 
-        // After the fade-out, change the background to white and remove snowflakes
+        // After the fade-out, change the background to white and add the rounded rectangle
         setTimeout(function() {
             // Change the background to white
             document.body.style.backgroundColor = 'white';
-
-            // Ensure the text color is visible on the new background
-            fadeContainer.style.color = 'black';
-            fadeContainer.style.opacity = '1';
-            clickText.textContent = '';
 
             // Remove all existing snowflakes
             document.querySelectorAll('.snowflake').forEach(snowflake => {
@@ -27,6 +22,11 @@ window.onload = function() {
 
             // Stop generating new snowflakes
             clearInterval(snowflakeInterval);
+
+            // Create the rounded rectangle box
+            const rectangle = document.createElement('div');
+            rectangle.classList.add('rounded-rectangle');
+            document.body.appendChild(rectangle);
 
         }, 500); // Ensures this happens after the fade-out
     });
