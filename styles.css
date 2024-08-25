@@ -20,3 +20,20 @@ body, html {
 #fade-container.show {
     opacity: 1;
 }
+
+.snowflake {
+    position: fixed;
+    top: -10px;
+    font-size: 14px;
+    color: white;
+    pointer-events: none;
+    user-select: none;
+    animation: fall linear infinite;
+    z-index: 9999;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
