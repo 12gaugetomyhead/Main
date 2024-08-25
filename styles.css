@@ -21,11 +21,21 @@ body, html {
     opacity: 1;
 }
 
+#click-text {
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+#click-text:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7);
+}
+
 .snowflake {
     position: fixed;
     top: -10px;
-    font-size: 14px;
-    color: white; /* White for the initial black background */
+    font-size: 20px;
+    color: white;
     pointer-events: none;
     user-select: none;
     animation: fall linear infinite;
@@ -37,4 +47,3 @@ body, html {
         transform: translateY(100vh);
     }
 }
-
