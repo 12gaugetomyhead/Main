@@ -24,7 +24,7 @@ window.onload = function() {
             // Stop generating new snowflakes
             clearInterval(snowflakeInterval);
 
-        }, 500);
+        }, 500); // Ensures this happens after the fade-out
     });
 
     // Function to create snowflakes
