@@ -10,18 +10,21 @@ window.onload = function() {
         fadeContainer.style.transition = 'opacity 0.5s ease-in-out';
         fadeContainer.style.opacity = '0';
 
-        // After the fade-out, change the background to white and snowflakes to black
+        // After the fade-out, change the background to white and remove snowflakes
         setTimeout(function() {
             document.body.style.backgroundColor = 'white';
-            fadeContainer.style.color = 'black';
             fadeContainer.style.opacity = '1';
             clickText.textContent = '';
 
-            // Change snowflake color to black for white background
+            // Remove all existing snowflakes
             document.querySelectorAll('.snowflake').forEach(snowflake => {
-                snowflake.style.color = 'black';
+                snowflake.remove();
             });
-        }, 500); // Adjusted delay to match fade-out
+
+            // Stop generating new snowflakes
+            clearInterval(snowflakeInterval);
+
+        }, 500);
     });
 
     // Function to create snowflakes
@@ -44,5 +47,5 @@ window.onload = function() {
     }
 
     // Generate snowflakes at intervals
-    setInterval(createSnowflake, 100);
+    const snowflakeInterval = setInterval(createSnowflake, 200);
 };
