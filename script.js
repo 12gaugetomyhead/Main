@@ -12,7 +12,11 @@ window.onload = function() {
 
         // After the fade-out, change the background to white and remove snowflakes
         setTimeout(function() {
+            // Change the background to white
             document.body.style.backgroundColor = 'white';
+
+            // Ensure the text color is visible on the new background
+            fadeContainer.style.color = 'black';
             fadeContainer.style.opacity = '1';
             clickText.textContent = '';
 
