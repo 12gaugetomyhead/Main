@@ -10,12 +10,17 @@ window.onload = function() {
         fadeContainer.style.transition = 'opacity 0.5s ease-in-out';
         fadeContainer.style.opacity = '0';
 
-        // After the fade-out, change the background to white
+        // After the fade-out, change the background to white and snowflakes to black
         setTimeout(function() {
             document.body.style.backgroundColor = 'white';
             fadeContainer.style.color = 'black';
             fadeContainer.style.opacity = '1';
             clickText.textContent = '';
+
+            // Change snowflake color to black for white background
+            document.querySelectorAll('.snowflake').forEach(snowflake => {
+                snowflake.style.color = 'black';
+            });
         }, 500); // Adjusted delay to match fade-out
     });
 
